@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('./static/img/Slide1.JPG');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .form {
+            width: 40vw;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form input {
+            width: 40vw;
+            margin-bottom: 20px;
+            height: 40px;
+            font-size: 35px;
+            text-align: center;
+            border-radius: 5px;
+            border-color: blue;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 800;
+        }
+
+        .form button {
+            width: 10vw;
+            height: 40px;
+            transition-duration: 0.4s;
+            border-radius: 5px;
+            border-color: #4CAF50;
+            box-shadow: none;
+            background-color: white;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+        }
+
+        .form button:hover {
+            background-color: #4CAF50;
+            /* Green */
+            color: white;
+        }
+
+        #bang-khen {
+            font-size: 10vh;
+            font-weight: 800;
+            font-family: 'Times New Roman', Times, serif;
+            width: 80vw;
+            text-align: center;
+            margin-top: -2px;
+        }
+
+        #nhapten {
+            height: 10vh;
+        }
+
+        #phieukhen {
+            margin-top: 20px;
+            height: 15vh;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        #chucmungem {
+            margin-top: 0;
+            height: 13vh;
+            margin-left: 10px;
+        }
+
+        #dahoanthanh {
+            height: 18vh;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <img id="nhapten" src="./static/img/Picture1.png" alt="">
+        <img hidden id="phieukhen" src="./static/img/Picture3.png" alt="">
+    </center>
+    <img hidden id="chucmungem" src="./static/img/Picture4.png" alt="">
+    <center>
+        <form id="form-khenthuong" class="form">
+            <input id="name" type="text" placeholder="">
+            <center>
+                <button id="btn-save" type="submit" value="Submit">Nhập</button>
+            </center>
+        </form>
+        <p hidden id="bang-khen"></p>
+    </center>
+    <center>
+        <img hidden id="dahoanthanh" src="./static/img/Picture5.png" alt="">
+    </center>
+    <script>
+        const inputName = document.querySelector("#name")
+        const btnSave = document.querySelector("#btn-save")
+        const formkhenthuong = document.querySelector("#form-khenthuong")
+        const tag_p = document.querySelector("#bang-khen")
+        const nhapten = document.querySelector("#nhapten")
+        const phieukhen = document.querySelector("#phieukhen")
+        const chucmungem = document.querySelector("#chucmungem")
+        const dahoanthanh = document.querySelector("#dahoanthanh")
+        btnSave.addEventListener("click", (e) => {
+            console.log('oke:',)
+            e.preventDefault();
+            document.body.style.backgroundImage = "url('./static/img/Slide2.JPG')";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundAttachment = "fixed";
+            document.body.style.backgroundSize = "100 % 100 %";
+            inputName.hidden = true;
+            btnSave.hidden = true;
+            nhapten.hidden = true;
+            tag_p.hidden = false;
+            phieukhen.hidden = false;
+            chucmungem.hidden = false;
+            dahoanthanh.hidden = false;
+            tag_p.textContent = inputName.value
+        })
+    </script>
+</body>
+
+</html>
